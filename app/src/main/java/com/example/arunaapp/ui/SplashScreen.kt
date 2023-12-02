@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import com.example.arunaapp.MainActivity
 import com.example.arunaapp.databinding.ActivitySplashScreenBinding
 
 @SuppressLint("CustomSplashScreen")
@@ -24,7 +23,7 @@ class SplashScreen : AppCompatActivity() {
 
     private fun setSplash() {
         Handler(Looper.getMainLooper()).postDelayed({
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, SelectActivity::class.java))
             finish()
         }, splashTimeOut)
     }
