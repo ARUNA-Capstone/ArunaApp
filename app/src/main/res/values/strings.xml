@@ -3,4 +3,9 @@
      <string name="imgDesc">Image</string>
      <string name="camera">Camera</string>
      <string name="gallery">Gallery</string>
+     <string name="scanresult">Scan Result</string>
+     <string name="nama_rumah">Nama Rumah:</string>
+     <string name="deskripsi">Deskripsi:</string>
+     <string name="nama_kontak">Nama Kontak:</string>
+     <string name="no_hp">No. HP:</string>
 </resources>
