@@ -1,4 +1,6 @@
 <resources>
-    <string name="app_name">ArunaApp</string>
-    <string name="imgDesc">Image</string>
+     <string name="app_name">ArunaApp</string>
+     <string name="imgDesc">Image</string>
+     <string name="camera">Camera</string>
+     <string name="gallery">Gallery</string>
 </resources>
