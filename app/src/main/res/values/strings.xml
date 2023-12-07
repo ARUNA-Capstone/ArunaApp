@@ -8,4 +8,8 @@
      <string name="deskripsi">Deskripsi:</string>
      <string name="nama_kontak">Nama Kontak:</string>
      <string name="no_hp">No. HP:</string>
+    <string name="uploads2">Upload Failed</string>
+     <string name="uploadt2">Something Went Wrong</string>
+     <string name="uploads">Success</string>
+     <string name="uploadt">Upload Successfully\n</string>
 </resources>

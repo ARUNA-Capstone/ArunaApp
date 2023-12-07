@@ -1,19 +1,32 @@
 package com.example.arunaapp.data.response
-import com.google.gson.annotations.SerializedName
-
-class ScanResponse (
-    @SerializedName("contact") val contact: Contact,
-    @SerializedName("information") val information: Information
-)
 
 data class Contact(
-    val phone: String? = null,
-    val name: String? = null,
-    val contactLink: String? = null
+    val id: Int,
+    val name: String,
+    val phone: String,
+    val contact_link: String
 )
 
 data class Information(
-    val image: String? = null,
-    val name: String? = null,
-    val description: String? = null
+    val id: Int,
+    val name: String,
+    val image: String,
+    val description: String
+)
+
+data class Data(
+    val class_name: String,
+    val confidence_score: Double,
+    val contact: Contact,
+    val information: Information
+)
+
+data class Status(
+    val code: Int,
+    val message: String
+)
+
+data class ScanResponse(
+    val data: Data,
+    val status: Status
 )
