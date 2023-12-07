@@ -8,7 +8,7 @@ import retrofit2.http.Part
 
 interface ServiceApi {
     @Multipart
-    @POST("predict")
+    @POST("api/predict")
     suspend fun postImage(
         @Part file: MultipartBody.Part
     ): ScanResponse
