@@ -11,61 +11,65 @@
         android:id="@+id/top_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="-40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/top_detail"
-        tools:layout_editor_absoluteY="-38dp"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/text_detail"
+        android:id="@+id/tv_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/detail_text"
-        android:textStyle="bold"
         android:textAlignment="center"
+        android:textColor="@color/black"
         android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/top_detail" />
 
     <ImageView
-        android:id="@+id/iv_photo"
+        android:id="@+id/iv_detail"
         android:layout_marginTop="20dp"
         android:layout_width="150dp"
         android:layout_height="150dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_detail"
+        app:layout_constraintTop_toBottomOf="@+id/tv_detail"
         tools:src="@tools:sample/backgrounds/scenic" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="300dp"
+        android:id="@+id/constraintLayout"
+        android:layout_width="350dp"
         android:layout_height="250dp"
-        android:layout_marginTop="30dp"
         android:background="@color/green_two"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_photo">
+        app:layout_constraintTop_toBottomOf="@+id/iv_detail">
 
         <TextView
             android:id="@+id/description"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/description"
-            android:textSize="20sp"
-            android:textAlignment="center"/>
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="-40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/bottom_detail"
-        tools:layout_editor_absoluteY="613dp"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
