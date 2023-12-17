@@ -1,15 +1,18 @@
 <resources>
-     <string name="app_name">ArunaApp</string>
-     <string name="imgDesc">Image</string>
-     <string name="camera">Camera</string>
-     <string name="gallery">Gallery</string>
-     <string name="scanresult">Scan Result</string>
-     <string name="nama_rumah">Nama Rumah:</string>
-     <string name="deskripsi">Deskripsi:</string>
-     <string name="nama_kontak">Nama Kontak:</string>
-     <string name="no_hp">No. HP:</string>
+    <string name="app_name">ArunaApp</string>
+    <string name="imgDesc">Image</string>
+    <string name="camera">Camera</string>
+    <string name="gallery">Gallery</string>
+    <string name="scanresult">Scan Result</string>
+    <string name="nama_rumah">Nama Rumah:</string>
+    <string name="contact_person">Contact Person:</string>
+    <string name="deskripsi">Deskripsi:</string>
+    <string name="nama_kontak">Nama Kontak:</string>
+    <string name="no_hp">No. HP:</string>
     <string name="uploads2">Upload Failed</string>
-     <string name="uploadt2">Something Went Wrong</string>
-     <string name="uploads">Success</string>
-     <string name="uploadt">Upload Successfully\n</string>
+    <string name="uploadt2">Something Went Wrong</string>
+    <string name="uploads">Success</string>
+    <string name="uploadt">Upload Successfully\n</string>
+    <string name="search_here">Search Here</string>
+    <string name="detail">Detail</string>
 </resources>

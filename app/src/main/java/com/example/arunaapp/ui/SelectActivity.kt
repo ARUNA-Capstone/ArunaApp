@@ -3,6 +3,7 @@ package com.example.arunaapp.ui
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import android.content.pm.PackageManager
 import android.graphics.BitmapFactory
 import android.net.Uri
@@ -15,6 +16,7 @@ import androidx.activity.viewModels
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.example.arunaapp.MainActivity
+import com.example.arunaapp.R
 import com.example.arunaapp.data.Results
 import com.example.arunaapp.databinding.ActivitySelectBinding
 import com.example.arunaapp.utils.reduceFileImage
@@ -52,6 +54,7 @@ class SelectActivity : AppCompatActivity() {
                 REQUEST_CODE_PERMISSIONS
             )
         }
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
     }
 
     private fun setAction() {
@@ -84,6 +87,7 @@ class SelectActivity : AppCompatActivity() {
             val mFile = uriToFile(selectedImage, this)
             getFile = mFile
             postImage(mFile)
+
             binding.addImage.setImageURI(selectedImage)
             binding.btnCamera.visibility = View.GONE
             binding.btnGaleri.visibility = View.GONE
@@ -108,24 +112,24 @@ class SelectActivity : AppCompatActivity() {
                 is Results.Success -> {
                     val name = response.data.data.contact.name
                     Log.d("ScanResponse", "Success: $name")
-                    binding.txtNamaPenjual.text = "Contact Person: " + response.data.data.contact.name
-                    binding.txtNamaRumah.text = response.data.data.class_name
+                    binding.txtNamaPenjual.text = resources.getString(R.string.contact_person) + " " + response.data.data.contact.name
+                    binding.txtNamaRumah.text = resources.getString(R.string.nama_rumah) + " " + response.data.data.class_name
                     binding.txtDesc.text = response.data.data.information.description
                     binding.txtNomer.text = response.data.data.contact.contact_link
                     binding.txtNomer.setOnClickListener{
                         val viewIntent = Intent(
                             "android.intent.action.VIEW",
-                            Uri.parse("http://" + response.data.data.contact.contact_link)
+                            Uri.parse("https://" + response.data.data.contact.contact_link)
                         )
                         startActivity(viewIntent)
                     }
-                    showToast("success")
+                    binding.progressBar.visibility = View.GONE
                 }
                 is Results.Error -> {
                     showToast(response.error)
                 }
                 is Results.Loading -> {
-                    showToast("Loading")
+                    binding.progressBar.visibility = View.VISIBLE
                 }
             }
         }
