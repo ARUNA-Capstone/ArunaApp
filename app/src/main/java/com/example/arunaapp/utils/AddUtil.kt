@@ -5,6 +5,7 @@ import android.app.Application
 import android.content.ContentResolver
 import android.content.Context
 import android.graphics.Bitmap
+import android.graphics.Bitmap.CompressFormat
 import android.graphics.BitmapFactory
 import android.graphics.Matrix
 import android.net.Uri
@@ -18,6 +19,7 @@ import java.io.InputStream
 import java.io.OutputStream
 import java.text.SimpleDateFormat
 import java.util.Locale
+
 
 private const val FILENAME_FORMAT = "dd-MMM-yyyy"
 
@@ -46,7 +48,24 @@ fun rotateBitmap(bitmap: Bitmap, isBackCamera: Boolean = false): Bitmap {
     val degrees = if (isBackCamera) 90f else -90f
     matrix.postRotate(degrees)
     if (!isBackCamera) matrix.postScale(-1f, 1f, bitmap.width / 2f, bitmap.height / 2f)
-    return Bitmap.createBitmap(bitmap, 0, 0, bitmap.width, bitmap.height, matrix, true)
+//    return Bitmap.createBitmap(bitmap, 0, 0, bitmap.width, bitmap.height, matrix, true)
+    val newBitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.width, bitmap.height, matrix, true)
+    return makeSquare(newBitmap)
+}
+
+fun makeSquare(originalBitmap: Bitmap): Bitmap {
+    val width = originalBitmap.width
+    val height = originalBitmap.height
+
+    val cropWidth = (width * 0.3).toInt()
+    val cropHeight = (height * 0.35).toInt()
+
+    val x = cropWidth
+    val y = cropHeight
+
+    val sizeWidth = width - (cropWidth * 2)
+
+    return Bitmap.createBitmap(originalBitmap, x, y, sizeWidth, sizeWidth)
 }
 
 fun uriToFile(selectedImg: Uri, context: Context): File {
@@ -71,13 +90,13 @@ fun reduceFileImage(file: File): File {
 
     do {
         val bmpStream = ByteArrayOutputStream()
-        bitmap.compress(Bitmap.CompressFormat.JPEG, compressQuality, bmpStream)
+        bitmap.compress(CompressFormat.JPEG, compressQuality, bmpStream)
         val bmpPicByteArray = bmpStream.toByteArray()
         streamLength = bmpPicByteArray.size
         compressQuality -= 5
     } while (streamLength > 1000000)
 
-    bitmap.compress(Bitmap.CompressFormat.JPEG, compressQuality, FileOutputStream(file))
+    bitmap.compress(CompressFormat.JPEG, compressQuality, FileOutputStream(file))
 
     return file
 }
