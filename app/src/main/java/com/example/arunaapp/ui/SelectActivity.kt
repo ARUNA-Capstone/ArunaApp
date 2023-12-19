@@ -15,7 +15,6 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.example.arunaapp.MainActivity
 import com.example.arunaapp.R
 import com.example.arunaapp.data.Results
 import com.example.arunaapp.databinding.ActivitySelectBinding
