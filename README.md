@@ -11,7 +11,7 @@ ARUNA is an application that can detect traditional house types using machine le
 ARUNA built using Kotlin Programming Language and implemented a recommended MVVM Architecture.
 
 ## 1. RunaScan
-This feature  upload your pictures of rumah adat to find the information about it.
+This feature is for user to find description of rumah adat, upload your pictures of rumah adat to find the information about it at teh RunaScan section.
 
 ## 2. RunaPedia
 This Feature profides the information of all the rumah adat in Indonesia you can scroll through the app to find the rumah adat information you want to know.
