@@ -1,4 +1,4 @@
-package com.example.arunaapp
+package com.example.arunaapp.ui
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.arunaapp.adapter.ArticleAdapter
 import com.example.arunaapp.data.response.DataItem
 import com.example.arunaapp.databinding.ActivityMainBinding
-import com.example.arunaapp.ui.SelectActivity
 import com.example.arunaapp.viewmodel.MainVM
 
 class MainActivity : AppCompatActivity() {

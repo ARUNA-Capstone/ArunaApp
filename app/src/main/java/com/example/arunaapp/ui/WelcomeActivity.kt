@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowInsets
 import android.view.WindowManager
-import com.example.arunaapp.MainActivity
 import com.example.arunaapp.databinding.ActivityWelcomeBinding
 
 class WelcomeActivity : AppCompatActivity() {

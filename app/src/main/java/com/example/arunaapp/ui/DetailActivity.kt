@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
-import com.example.arunaapp.MainActivity
 import com.example.arunaapp.databinding.ActivityDetailBinding
 import com.example.arunaapp.viewmodel.DetailVM
 
