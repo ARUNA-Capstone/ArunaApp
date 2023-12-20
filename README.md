@@ -24,7 +24,7 @@ This Feature profides the information of all the rumah adat in Indonesia you can
     - Compile SDK: 34 
   - ##### Installation
     - Clone the project to your local storage
-      ``` git clone https://github.com/ARUNA-Capstone/ArunaApp.git```}```
+      ```git clone https://github.com/ARUNA-Capstone/ArunaApp.git```
       
 ## Used library in this project :
   - Android Jetpack
